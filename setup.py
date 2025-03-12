@@ -1,17 +1,6 @@
 # -*- coding: utf-8 -*-
-import warnings
-from setuptools import setup, find_packages, Extension, dist
+from setuptools import setup, find_packages
 
-dist.Distribution().fetch_build_eggs(['Cython>=0.15.1', 'numpy>=1.10'])
-
-import numpy
-
-from Cython.Build import cythonize
-
-cyloc1 = 'pyequion2/activity/coo_tensor_ops/coo_tensor_ops.pyx'
-
-ext = Extension('pyequion2.activity.coo_tensor_ops.coo_tensor_ops',
-                sources=[cyloc1])
 packages = ['pyequion2'] + \
            ['pyequion2.' + subpack for subpack in find_packages('pyequion2')]
 
